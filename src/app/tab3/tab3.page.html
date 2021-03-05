@@ -1,17 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Eliminar contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="ultimo">
+    <h2>¿Quieres Borrar el ultimo Contacto?</h2>
+    <ion-button color="danger" (click)="contactoService.deleteContactoUltimo()">Borrar Ultimo</ion-button>
+  </div>
+  <div class="primero">
+    <h2>¿Quieres Borrar el primer Contacto?</h2>
+    <ion-button color="danger" (click)="contactoService.deleteContactoPrimero()">Borrar Primero</ion-button>
+  </div>
 </ion-content>

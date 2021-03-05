@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Añadir Contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class=form>
+    
+    <ion-item class="contacto">
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" [(ngModel)]='nombreCompleto'></ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-item class="contacto">
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="tel" [(ngModel)]='telefono'></ion-input>
+    </ion-item>
+
+    <ion-item class="contacto">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input type="text" [(ngModel)]='correo'></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="addContacto()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+  </div>
 </ion-content>
+

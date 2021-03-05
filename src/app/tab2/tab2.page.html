@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="Contactos">
+    <ion-card *ngFor="let contacto of contactoService.contactos; let i=index">
+      <ion-card-header>
+        <ion-card-subtitle>{{contacto.nombreCompleto}}</ion-card-subtitle>
+        <ion-card-title>{{contacto.correo}}</ion-card-title>
+        <ion-card-subtitle>{{contacto.telefono}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  
+    <div *ngIf="contactoService.contactos?.length==0" style="margin-top: 20px;">
+      <h1 color='primary'>No hay contactos</h1>
+    </div>
+  </div>
 </ion-content>
